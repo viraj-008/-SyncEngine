@@ -4,11 +4,13 @@ import { Worker } from "bullmq";
 import redis from "./src/config/redis.config.js";
 import { Job } from "./src/models/jobShcema.js";
 import { ImportLog } from "./src/models/importLogSchema.js";
-import { connectDB } from "./src/DB/ConnectDB.js";
-console.log("MONGO_URI:", process.env.MONGO_URI);
-console.log("REDIS_HOST:", process.env.REDIS_HOST);
+// import { connectDB } from "./src/DB/ConnectDB.js";
+console.log("MONGO_URI:", process.env.MONGO_URI,"worker db");
+console.log("REDIS_HOST:", process.env.REDIS_HOST,"worker  redis");
 
-connectDB();
+
+
+// connectDB();
 let stats = {
   totalFetched: 0,
   newJobs: 0,

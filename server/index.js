@@ -7,6 +7,7 @@ import  {getImportLogs}  from './src/controller/importLogController.js';
 import { getJobs } from './src/controller/jobs.js';
 import { lastImportStatus } from './src/controller/system-status.js';
 import { cronJob } from './src/cron/jobFetcher.cron.js';
+import './worker.js'
 import { connectDB } from './src/DB/ConnectDB.js';
 import express from 'express';
 
