@@ -5,8 +5,10 @@ import IORedis from 'ioredis';
 
 const redis = new IORedis({
   host: process.env.REDIS_HOST,
-  port: process.env.REDIS_PORT,
-  password: process.env.REDIS_PASSWORD, 
+  port: parseInt(process.env.REDIS_PORT), // convert string to number
+  password: process.env.REDIS_PASSWORD,
+  family: 4,        // force IPv4 (ENETUNREACH fix)
+  tls: undefined,   // IMPORTANT: remove TLS for non-TLS port
   maxRetriesPerRequest: null,
   enableReadyCheck: true,
 });
