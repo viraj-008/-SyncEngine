@@ -17,7 +17,7 @@ app.use(express.json());
 
 connectDB();
 app.use(cors({
-    origin: 'http://localhost:3001' 
+    origin: '*' 
 }));
 
 const queue = new Queue("jobQueue", {

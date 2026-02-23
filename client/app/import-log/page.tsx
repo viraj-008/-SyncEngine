@@ -22,7 +22,7 @@ const ImportLogsPage = () => {
   const [failedRecords, setFailedRecords] = useState<any[]>([]);
   const limit = 10;
 
-  const URL = `http://localhost:3000/api/import-logs?page=${page}&limit=${limit}`;
+  const URL = `${process.env.NEXT_PUBLIC_API_URL}/api/import-logs?page=${page}&limit=${limit}`;
 
   useEffect(() => {
     const fetchImportLogs = async () => {

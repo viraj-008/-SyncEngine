@@ -25,7 +25,7 @@ export default function JobsPage() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:3000/api/get-jobs?page=${page}&limit=${limit}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/get-jobs?page=${page}&limit=${limit}`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data.jobs);
