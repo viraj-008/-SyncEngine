@@ -1,4 +1,5 @@
 'use client';
+import { Loader } from 'lucide-react';
 import { AudioLines } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -78,7 +79,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-2.5 text-gray-600 dark:text-gray-400">
           <span className="font-medium whitespace-nowrap">Last Import:</span>
           <span className="font-semibold text-gray-900 dark:text-gray-100">
-            {statusData ? getTimeAgo(statusData) : "No data"}
+            {statusData ? getTimeAgo(statusData) : (<Loader className="animate-spin" />)}
           </span>
         </div>
 
